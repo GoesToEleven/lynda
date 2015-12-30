@@ -1,12 +1,13 @@
 1. my teaching style
 	* I'm here for you
-	* teach you how to use Go - I'm assuming you're here to learn Go
-		* I don't want to just show a solution to a problem, I want to show you how to use Go
+	* teach you how to use Go
+		* I'm assuming you're here to learn Go
+		* I don't want to just show you a solution, I want teach you how to create a solution
 		* teach through example
-		* solution first, then steps to build solution
 		* code review, not coding
-			* allows for an effective learning technique:
+			* allows for effective learning
 				* pause video, try to understand code, then continue video
+				* keeps your brain engaged and active, not just passively watching
 		* give you too much, as opposed to not enough
 		* point out useful resources
 	* If I talk too fast for you:

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	f, err := os.Open("../images/78771293.jpg")
+	f, err := os.Open("../00_images/78771293.jpg")
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -9,13 +9,15 @@ import (
 	"path/filepath"
 )
 
+var counter int
+
 type pixel struct {
 	r, g, b, a uint32
 }
 
 func main() {
 
-	images := getImages("../../images/")
+	images := getImages("../00_images/")
 
 	// range over the [] holding the []pixel - eg, give me each img
 	//     range over the []pixel hold the pixels - eg, give me each pixel
@@ -27,12 +29,12 @@ func main() {
 			}
 		}
 	}
+	fmt.Println("PIXELS EXAMINED:", counter)
 }
 
 func getImages(dir string) [][]pixel {
 
-	n := fileCount(dir)
-	images := make([][]pixel, n)
+	var images [][]pixel
 
 	filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
@@ -46,20 +48,6 @@ func getImages(dir string) [][]pixel {
 	})
 
 	return images
-}
-
-func fileCount(dir string) int {
-	n := 0
-
-	filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-		if info.IsDir() {
-			return nil
-		}
-		n++
-		return nil
-	})
-
-	return n
 }
 
 func loadImage(filename string) image.Image {
@@ -91,6 +79,7 @@ func getPixels(img image.Image) []pixel {
 		pixels[i].g = g
 		pixels[i].b = b
 		pixels[i].a = a
+		counter++
 	}
 
 	return pixels
