@@ -1,0 +1,5 @@
+1. research
+	* http://rosettacode.org/wiki/Category:Image_processing
+	* https://en.wikipedia.org/wiki/Sum_of_absolute_differences
+
+
