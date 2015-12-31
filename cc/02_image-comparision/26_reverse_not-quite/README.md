@@ -14,12 +14,12 @@
 		```
 ```
 // transpose needle
-nIdx := (n.width - 1) - (i % n.width)
+nIdx := (n.width - 1) - (i % n.width) + (n.width * (i / n.width))
 
 eg, an example with an image that has width 10
 so pixels in slice index position: 0 - 9
 
-i	nIdx	(n.width - 1)	(i % n.width)
+i	nIdx	(n.width - 1)	(i % n.width)	(n.width * (i / n.width))
 0	9		9				0
 1	8		9				1
 2	7		9				2

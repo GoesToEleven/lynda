@@ -142,7 +142,7 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 
 	for i := 0; i < n.height*n.width; i++ {
 		// transpose needle
-		nIdx := (n.width - 1) - (i % n.width)
+		nIdx := (n.width - 1) - (i % n.width) + (n.width * (i / n.width))
 
 		// if start of new row, align pixels
 		newRow := (i % n.width == 0)
@@ -166,7 +166,7 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 			fmt.Println("NEW ROW*******************************", deleteMe)
 			deleteMe++
 		}
-		if diff < 3000 {
+		if diff < 10000 {
 			counter++
 		}
 
