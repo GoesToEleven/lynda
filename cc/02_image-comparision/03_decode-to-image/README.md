@@ -22,11 +22,24 @@
 ```
 OUTPUT:
 
+IMAGE TYPE: *image.YCbCr
 Width x Height:  3867  x  2577
 Total Pixels:  9965259
 First pixel: 30884 27783 21662 65535
 Last pixel: 0 34678 0 65535
 ```
+
+1. YCbCr
+	* https://godoc.org/image#YCbCr
+		* implements type image.Image interface
+		 	* https://godoc.org/image#Image
+			* has these three methods
+				* At(x, y int) color.Color
+				* Bounds() Rectangle
+				* ColorModel() color.Model
+		* We can use
+			* At(x, y int) color.Color
+			* color.Color.RGBA()
 
 1. 2^16 = 65536
 	* each pixel has 4 * 16 = 64 bits

@@ -211,3 +211,7 @@ Incredible.
 And let's look at the images which were created.
 
 Very cool.
+
+One last note:
+	* http://rosettacode.org/wiki/Category:Image_processing
+	* https://en.wikipedia.org/wiki/Sum_of_absolute_differences

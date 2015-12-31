@@ -10,6 +10,8 @@
 				* keeps your brain engaged and active, not just passively watching
 		* give you too much, as opposed to not enough
 		* point out useful resources
+		* give you an awesome code base
+			* examples that show you different patterns in Go
 	* If I talk too fast for you:
 		* slow me down - not everyone knows they can slow a video down
 		* rewatch the video

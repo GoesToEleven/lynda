@@ -20,6 +20,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Printf("IMAGE TYPE: %T \n", img)
+
 	bounds := img.Bounds()
 
 	fmt.Println("Width x Height: ", bounds.Dx(), " x ", bounds.Dy())
