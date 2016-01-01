@@ -3,7 +3,7 @@ package main
 import (
 	"math"
 	"sync"
-	"fmt"
+	"sync/atomic"
 )
 
 func compare(images []*image) chan result {
@@ -72,9 +72,8 @@ func comparePixels(n, h *image, ch chan result) {
 			}(n, h, i, ch)
 		}
 		// reverse compare
-		if (diffReverse < threshold) && (x+n.width < h.width) && godoit {
+		if (diffReverse < threshold) && (x+n.width < h.width) {
 			wg.Add(1)
-			godoit = false
 			go func(n, h *image, i int, ch chan result) {
 				defer wg.Done()
 				compareSequenceReverse(n, h, i, ch)
@@ -85,6 +84,7 @@ func comparePixels(n, h *image, ch chan result) {
 }
 
 func pixelDiff(n, h pixel) float64 {
+	atomic.AddInt64(&compareCount, 1)
 	var diff float64
 	diff += math.Abs(float64(int(n.r) - int(h.r)))
 	diff += math.Abs(float64(int(n.g) - int(h.g)))
@@ -134,9 +134,6 @@ func compareSequence(n, h *image, hIdx int, ch chan result) {
 
 func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 
-	fmt.Println("COMPARE REVERSE:", n.name, "in", h.name, "at", hIdx)
-	var deleteMe int
-	var deleteLargestDiff float64
 	var counter int
 	var accumulator uint64
 	hStartPix := hIdx
@@ -159,27 +156,19 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 		// (2) if in new row, reset counter
 		// (3) if this pixel beneath threshold, increment counter
 		if newRow && notFirstRow && counter < 10 {
-			godoit = true
 			return
 		}
 		if newRow {
-			fmt.Printf("ROW:%v, PIX UNDER THRESHOLD:%v, LARGEST DIFF: %v\n", deleteMe, counter, deleteLargestDiff)
 			counter = 0
-			deleteLargestDiff = 0
-			deleteMe++
 		}
 		if diff < 5000 {
-			if diff > deleteLargestDiff {
-				deleteLargestDiff = diff
-			}
 			counter++
 		}
 
 		hIdx++
 		accumulator += uint64(diff)
 	}
-	
-	godoit = true
+
 	avgDiff := int(accumulator / uint64(n.height*n.width))
 	ch <- result{n, h, hStartPix, avgDiff}
 }

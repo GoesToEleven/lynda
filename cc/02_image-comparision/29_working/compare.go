@@ -3,7 +3,6 @@ package main
 import (
 	"math"
 	"sync"
-	"fmt"
 )
 
 func compare(images []*image) chan result {
@@ -72,9 +71,8 @@ func comparePixels(n, h *image, ch chan result) {
 			}(n, h, i, ch)
 		}
 		// reverse compare
-		if (diffReverse < threshold) && (x+n.width < h.width) && godoit {
+		if (diffReverse < threshold) && (x+n.width < h.width) {
 			wg.Add(1)
-			godoit = false
 			go func(n, h *image, i int, ch chan result) {
 				defer wg.Done()
 				compareSequenceReverse(n, h, i, ch)
@@ -134,18 +132,16 @@ func compareSequence(n, h *image, hIdx int, ch chan result) {
 
 func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 
-	fmt.Println("COMPARE REVERSE:", n.name, "in", h.name, "at", hIdx)
 	var counter int
 	var accumulator uint64
 	hStartPix := hIdx
 
 	for i := 0; i < n.height*n.width; i++ {
 		// transpose needle
-		nIdx := (n.width - 1) - (i % n.width)
-		fmt.Println(nIdx)
+		nIdx := (n.width - 1) - (i % n.width) + (n.width * (i / n.width))
 
 		// if start of new row, align pixels
-		newRow := (nIdx % n.width == 0)
+		newRow := (i % n.width == 0)
 		notFirstRow := ((i / n.width) != 0)
 		if newRow && notFirstRow {
 			hIdx += (h.width - n.width)
@@ -158,13 +154,12 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 		// (2) if in new row, reset counter
 		// (3) if this pixel beneath threshold, increment counter
 		if newRow && notFirstRow && counter < 10 {
-			godoit = true
 			return
 		}
 		if newRow {
 			counter = 0
 		}
-		if diff < threshold {
+		if diff < 5000 {
 			counter++
 		}
 
@@ -172,7 +167,6 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 		accumulator += uint64(diff)
 	}
 
-	godoit = true
 	avgDiff := int(accumulator / uint64(n.height*n.width))
 	ch <- result{n, h, hStartPix, avgDiff}
 }
