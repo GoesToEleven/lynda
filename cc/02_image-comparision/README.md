@@ -1,5 +1,18 @@
 # Code Clinic: Image Comparision
 
+## Include somewhere
+	* Google Deep Dream
+		* google release
+			* http://googleresearch.blogspot.co.uk/2015/06/inceptionism-going-deeper-into-neural.html
+		* Popular Science article
+			* http://www.popsci.com/turn-your-life-computers-dream-world
+		* Websites - upload photos
+			* http://psychic-vr-lab.com/deepdream/
+			* deep dreaming lynda.jpg
+				* http://psychic-vr-lab.com/deepdream/pics/1015029.html
+	* http://rosettacode.org/wiki/Category:Image_processing
+	* https://en.wikipedia.org/wiki/Sum_of_absolute_differences
+
 ## Introduction
 
 `Lynda.com standard intro`
@@ -211,7 +224,3 @@ Incredible.
 And let's look at the images which were created.
 
 Very cool.
-
-One last note:
-	* http://rosettacode.org/wiki/Category:Image_processing
-	* https://en.wikipedia.org/wiki/Sum_of_absolute_differences

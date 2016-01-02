@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	// each row - stores column which queen is in for each row
 	options := []int{0, 1, 2, 3, 4, 5, 6, 7}
 	perm := getOptions(options)
 	var numAns int
@@ -55,7 +56,8 @@ func intAbs(x int) int {
 
 func checkValid(board []int) bool {
 	for row1, col1 := range board {
-		for row2 := row1 + 1; row2 < 8; row2++ {
+//		for row2 := row1 + 1; row2 < 8; row2++ {
+		for row2 := row1 + 1; row2 < len(board); row2++ {
 			col2 := board[row2]
 			if intAbs(row2-row1) == intAbs(col2-col1) {
 				return false
@@ -92,8 +94,3 @@ func permute(options []int, start int) [][]int {
 	}
 	return answers
 }
-
-/*
-credit for algorithm:
-http://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
-*/

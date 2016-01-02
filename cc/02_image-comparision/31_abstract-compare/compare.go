@@ -92,53 +92,21 @@ func pixelDiff(n, h pixel) float64 {
 }
 
 func compareSequence(n, h *image, hIdx int, ch chan result) {
-
-	var counter int
-	var accumulator uint64
-	hStartPix := hIdx
-
-	for i := 0; i < n.height*n.width; i++ {
-
-		// if start of new row, align pixels
-		newRow := (i % n.width == 0)
-		notFirstRow := ((i / n.width) != 0)
-		if newRow && notFirstRow {
-			hIdx += (h.width - n.width)
-		}
-
-		diff := pixelDiff(n.pixels[i], h.pixels[hIdx])
-
-		// each row must have minimum number of pixels beneath threshold
-		// (1) did the previous row have less than 10?
-		// (2) if in new row, reset counter
-		// (3) if this pixel beneath threshold, increment counter
-		if newRow && notFirstRow && counter < 10 {
-			return
-		}
-		if newRow {
-			counter = 0
-		}
-		if diff < threshold {
-			counter++
-		}
-
-		hIdx++
-		accumulator += uint64(diff)
-	}
-
-	avgDiff := int(accumulator / uint64(n.height*n.width))
-	ch <- result{n, h, hStartPix, avgDiff}
+	compareIml(n, h, hIdx, ch, func(x int) int {return x})
 }
 
 func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
+	compareIml(n, h, hIdx, ch, func(x int) int {return (n.width - 1) - (x % n.width) + (n.width * (x / n.width))})
+}
 
+func compareIml(n, h *image, hIdx int, ch chan result, indexCalc func(int) int) {
 	var counter int
 	var accumulator uint64
 	hStartPix := hIdx
 
 	for i := 0; i < n.height*n.width; i++ {
-		// transpose needle
-		nIdx := (n.width - 1) - (i % n.width) + (n.width * (i / n.width))
+		// transpose needle if compareSequenceReverse
+		nIdx := indexCalc(i)
 
 		// if start of new row, align pixels
 		newRow := (i % n.width == 0)
@@ -159,7 +127,7 @@ func compareSequenceReverse(n, h *image, hIdx int, ch chan result) {
 		if newRow {
 			counter = 0
 		}
-		if diff < 5000 {
+		if diff < threshold {
 			counter++
 		}
 
