@@ -53,8 +53,8 @@ func getImages() ([][]pixel, error) {
 
 	var images [][]pixel
 	for _, path := range paths {
-		go func(path string) {
-			pixels := getPixels(path)
+		go func(p string) {
+			pixels := getPixels(p)
 
 			mu.Lock()
 			{

@@ -18,7 +18,7 @@ type pixel struct {
 
 func main() {
 	start := time.Now()
-	images := getImages("../../images/")
+	images := getImages("../00_images/")
 
 	// range over the [] holding the []pixel - eg, give me each img
 	//     range over the []pixel hold the pixels - eg, give me each pixel
