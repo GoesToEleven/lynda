@@ -12,8 +12,6 @@
 		* type Duration
 			* https://github.com/GoesToEleven/GolangTraining/search?utf8=%E2%9C%93&q=sleep
 2. benchmarking
-	* not going to go through this code
 	* another more accurate way to measure the performance of your code
-	* leaving these in as FYI, further reading, examples
-	* and also check out this:
+	* check out this:
 		* https://godoc.org/testing

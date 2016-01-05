@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	f, err := os.Open("../../../Environmental_Data_Deep_Moor_2015.txt")
+	f, err := os.Open("../../Environmental_Data_Deep_Moor_2015.txt")
 	if err != nil {
 		panic(err)
 	}

@@ -24,10 +24,10 @@ func main() {
 	}
 
 	// Don't count the header row in len(rows)
-	fmt.Sprintln("Total Records: ", len(rows)-1)
-	fmt.Sprintln("Air Temp:\t", mean(rows, 1), median(rows, 1))
-	fmt.Sprintln("Barometric:\t", mean(rows, 2), median(rows, 2))
-	fmt.Sprintln("Wind Speed:\t", mean(rows, 7), median(rows, 7))
+	fmt.Println("Total Records: ", len(rows)-1)
+	fmt.Println("Air Temp:\t", median(rows, 1))
+	fmt.Println("Barometric:\t", median(rows, 2))
+	fmt.Println("Wind Speed:\t", median(rows, 7))
 }
 
 func median(rows [][]string, idx int) float64 {
@@ -39,9 +39,6 @@ func median(rows [][]string, idx int) float64 {
 		}
 	}
 	sort.Float64s(sorted)
-	fmt.Println("len(sorted): ", len(sorted))
-	fmt.Println("len(sorted)/2: ", len(sorted)/2)
-	fmt.Println("float64(len(sorted))/2: ", float64(len(sorted))/2)
 
 	if len(sorted)%2 == 0 {
 		// even number of items
@@ -53,15 +50,4 @@ func median(rows [][]string, idx int) float64 {
 	// for example: 3, 5, 8
 	// median is 5
 	return 1.0
-}
-
-func mean(rows [][]string, idx int) float64 {
-	var total float64
-	for i, row := range rows {
-		if i != 0 {
-			val, _ := strconv.ParseFloat(row[idx], 64)
-			total += val
-		}
-	}
-	return total / float64(len(rows)-1)
 }
