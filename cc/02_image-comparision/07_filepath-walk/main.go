@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	filepath.Walk("../00_images/", func(path string, info os.FileInfo, err error) error {
+	filepath.Walk("../../", func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
 			return nil
 		}
