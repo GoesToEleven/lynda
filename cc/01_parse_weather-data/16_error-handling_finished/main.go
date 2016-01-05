@@ -30,6 +30,20 @@ func main() {
 	fmt.Println("Wind Speed:\t", mean(rows, 7), median(rows, 7))
 }
 
+func mean(rows [][]string, idx int) float64 {
+	var total float64
+	for i, row := range rows {
+		if i != 0 {
+			val, err := strconv.ParseFloat(row[idx], 64)
+			if err != nil {
+				panic(err)
+			}
+			total += val
+		}
+	}
+	return total / float64(len(rows)-1)
+}
+
 func median(rows [][]string, idx int) float64 {
 	var sorted []float64
 	for i, row := range rows {
@@ -56,18 +70,4 @@ func median(rows [][]string, idx int) float64 {
 	// median is 5
 	middle := len(sorted) / 2
 	return sorted[middle]
-}
-
-func mean(rows [][]string, idx int) float64 {
-	var total float64
-	for i, row := range rows {
-		if i != 0 {
-			val, err := strconv.ParseFloat(row[idx], 64)
-			if err != nil {
-				panic(err)
-			}
-			total += val
-		}
-	}
-	return total / float64(len(rows)-1)
 }
