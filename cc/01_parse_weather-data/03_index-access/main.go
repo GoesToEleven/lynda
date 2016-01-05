@@ -21,7 +21,7 @@ func main() {
 	}
 
 	for i, row := range rows {
-		 fmt.Println(i, row)
+		fmt.Println(i, row)
 		// now using index access
 		if i == 1 {
 			fmt.Println(row[0])
