@@ -13,8 +13,18 @@ import (
 )
 
 // at terminal:
-// go run -race main.go
 
+// go run *.go
+
+// go run -race *.go
+
+// go build
+// ./17_compare-images
+
+// go install
+// 17_compare-images
+
+// THRESHOLD
 // 500/(65535*4) = 0.00190737773
 // 1000/(65535*4) = 0.00381475547
 // 2000/(65535*4) = 0.00762951094
