@@ -34,7 +34,10 @@ func main() {
 }
 
 func xi(f *os.File) {
-	x, _ := exif.Decode(f)
+	x, err := exif.Decode(f)
+	if err != nil {
+		log.Println(err)
+	}
 	if x != nil {
 		tm, _ := x.DateTime()
 		fmt.Println("Taken: ", tm)
