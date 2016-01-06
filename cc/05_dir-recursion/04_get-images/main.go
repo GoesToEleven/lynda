@@ -17,7 +17,7 @@ func main() {
 		ext := filepath.Ext(path)
 
 		switch ext {
-		case ".jpg", ".jpeg", ".gif", ".png":
+		case ".jpg", ".jpeg":
 			fmt.Println(ext)
 		}
 		return nil

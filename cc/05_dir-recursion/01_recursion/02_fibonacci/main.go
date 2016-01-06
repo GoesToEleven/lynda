@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	f := fibonacci(10)
+	f := fibonacci(4)
 	fmt.Println(f)
 }
 
