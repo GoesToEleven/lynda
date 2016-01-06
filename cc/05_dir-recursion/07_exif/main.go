@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/rwcarlsen/goexif/exif"
 	"log"
 	"os"
 	"path/filepath"
-	"github.com/rwcarlsen/goexif/exif"
 )
 
 func main() {
@@ -41,7 +41,5 @@ func xi(f *os.File) {
 
 		lat, long, _ := x.LatLong()
 		fmt.Println("lat, long: ", lat, ", ", long)
-
-		fmt.Println(x.String())
 	}
 }

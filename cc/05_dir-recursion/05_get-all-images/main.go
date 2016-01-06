@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/rwcarlsen/goexif/exif"
+	"image/jpeg"
 	"log"
 	"os"
 	"path/filepath"
-	"strings"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
 
 		ext := filepath.Ext(path)
 		switch ext {
-		case ".jpg", ".jpeg":
+		case ".jpg", ".jpeg", ".gif", ".png":
 			fmt.Println(ext)
 
 			f, err := os.Open(path)
@@ -27,23 +26,15 @@ func main() {
 			}
 			defer f.Close()
 
-			xi(f)
+			img, err := jpeg.Decode(f)
+			r, g, b, a := img.At(0, 0).RGBA()
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Printf("%d %d %d %d \n", r, g, b, a) // 30884 27783 21662 65535
+
 		}
 
 		return nil
 	})
-}
-
-func xi(f *os.File) {
-	x, _ := exif.Decode(f)
-	if x != nil {
-		str := x.String()
-		if strings.Contains(str, "ImageDescription") {
-			tm, _ := x.DateTime()
-			fmt.Println("Taken: ", tm)
-
-			lat, long, _ := x.LatLong()
-			fmt.Println("lat, long: ", lat, ", ", long)
-		}
-	}
 }

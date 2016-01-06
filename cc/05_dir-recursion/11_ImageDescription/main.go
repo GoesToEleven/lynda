@@ -39,11 +39,14 @@ func xi(f *os.File) {
 	if x != nil {
 		str := x.String()
 		if strings.Contains(str, "ImageDescription") {
-			tm, _ := x.DateTime()
-			fmt.Println("Taken: ", tm)
 
-			lat, long, _ := x.LatLong()
-			fmt.Println("lat, long: ", lat, ", ", long)
+			// ImageDescription: "CROPPED and FLIPPED Statue of Liberty"
+			phrase := `ImageDescription: "`
+			start := strings.Index(str, phrase) + len(phrase)
+			end := start + strings.Index(str[start:], `"`)
+			fmt.Println(start)
+			fmt.Println(end)
+			fmt.Println(str[start:end])
 		}
 	}
 }

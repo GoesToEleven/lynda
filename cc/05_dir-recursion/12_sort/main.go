@@ -6,10 +6,23 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 )
 
 func main() {
+
+	xs := getImages()
+	sort.Strings(xs)
+	for i, v := range xs {
+		fmt.Println(i, v)
+	}
+
+}
+
+func getImages() []string {
+
+	var paths []string
 
 	filepath.Walk("../../", func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
@@ -19,31 +32,36 @@ func main() {
 		ext := filepath.Ext(path)
 		switch ext {
 		case ".jpg", ".jpeg":
-			fmt.Println(ext)
-
 			f, err := os.Open(path)
 			if err != nil {
 				log.Fatal(err)
 			}
 			defer f.Close()
 
-			xi(f)
+			str := xi(f)
+			if str != "" {
+				str = str + "|" + path
+				paths = append(paths, str)
+			}
 		}
-
 		return nil
 	})
+
+	return paths
 }
 
-func xi(f *os.File) {
+func xi(f *os.File) string {
 	x, _ := exif.Decode(f)
 	if x != nil {
 		str := x.String()
 		if strings.Contains(str, "ImageDescription") {
-			tm, _ := x.DateTime()
-			fmt.Println("Taken: ", tm)
 
-			lat, long, _ := x.LatLong()
-			fmt.Println("lat, long: ", lat, ", ", long)
+			// ImageDescription: "CROPPED and FLIPPED Statue of Liberty"
+			phrase := `ImageDescription: "`
+			start := strings.Index(str, phrase) + len(phrase)
+			end := start + strings.Index(str[start:], `"`)
+			return str[start:end]
 		}
 	}
+	return ""
 }

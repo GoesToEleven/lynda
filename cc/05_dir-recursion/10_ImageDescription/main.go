@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/rwcarlsen/goexif/exif"
 	"log"
 	"os"
 	"path/filepath"
-	"github.com/rwcarlsen/goexif/exif"
 	"strings"
 )
 
@@ -43,10 +43,7 @@ func xi(f *os.File) {
 			// ImageDescription: "CROPPED and FLIPPED Statue of Liberty"
 			phrase := `ImageDescription: "`
 			start := strings.Index(str, phrase) + len(phrase)
-			end := start + strings.Index(str[start:], `"`)
-			fmt.Println(start)
-			fmt.Println(end)
-			fmt.Println(str[start:end])
+			fmt.Println("DID I GET DESCRIP:", str[start:])
 		}
 	}
 }

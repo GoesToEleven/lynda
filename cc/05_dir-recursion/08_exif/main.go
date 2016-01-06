@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"strings"
 )
 
 func main() {
@@ -37,13 +36,12 @@ func main() {
 func xi(f *os.File) {
 	x, _ := exif.Decode(f)
 	if x != nil {
-		str := x.String()
-		if strings.Contains(str, "ImageDescription") {
-			tm, _ := x.DateTime()
-			fmt.Println("Taken: ", tm)
+		tm, _ := x.DateTime()
+		fmt.Println("Taken: ", tm)
 
-			lat, long, _ := x.LatLong()
-			fmt.Println("lat, long: ", lat, ", ", long)
-		}
+		lat, long, _ := x.LatLong()
+		fmt.Println("lat, long: ", lat, ", ", long)
+
+		fmt.Println(x.String())
 	}
 }
