@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
 	"strings"
-	"text/template"
 )
 
 type course struct {
@@ -17,28 +17,10 @@ type semester struct {
 	Courses 	[]course
 }
 
+
 func main() {
-	// #1 get data
 	semesters := academicYear("data/first_semester.txt", "data/second_semester.txt")
-
-	// #2 parse template
-	tpl, err := template.ParseFiles("public/programs/graphic-design.htm")
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	// #3 create file
-	nf, err := os.Create("public/programs/index.html")
-	if err != nil {
-		log.Println("error creating file", err)
-	}
-
-	// #4 execute template
-	err = tpl.Execute(nf, semesters)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
+	fmt.Println(semesters)
 }
 
 func academicYear(s ...string) []semester {

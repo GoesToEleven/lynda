@@ -6,11 +6,12 @@
 </head>
 <body>
 <ul>
-    {{range .}}
-    <li>{{.}}</li>
-    {{else}}
-    <li>NO ITEMS</li>
+{{range .}}
+    {{.Term}}<br>
+    {{range .Courses}}
+        {{.}}<br>
     {{end}}
+{{end}}
 </ul>
 </body>
 </html>

@@ -8,6 +8,10 @@ import (
 	"strings"
 )
 
+type course struct {
+	Number, Name, Units string
+}
+
 func main() {
 
 	records := getRecords("data/first_semester.txt")
@@ -19,11 +23,14 @@ func main() {
 			t := xs[0]
 			fmt.Println("TERM:", t)
 		} else {
+			c := course{}
 			xs := strings.SplitN(row[0], " ", 2)
-			fmt.Println(xs[0], xs[1], row[1])
+			c.Number = xs[0]
+			c.Name = xs[1]
+			c.Units = row[1]
+			fmt.Println(c)
 		}
 	}
-
 }
 
 func getRecords(path string) [][]string {

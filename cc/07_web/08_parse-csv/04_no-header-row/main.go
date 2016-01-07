@@ -25,7 +25,11 @@ func main() {
 
 	// #3 display output
 	for i, row := range records {
-		if i != 0 {
+		if i == 0 {
+			xs := strings.SplitN(row[0], ",", 2)
+			t := xs[0]
+			fmt.Println("TERM:", t)
+		} else {
 			xs := strings.SplitN(row[0], " ", 2)
 			fmt.Println(xs[0], xs[1], row[1])
 		}

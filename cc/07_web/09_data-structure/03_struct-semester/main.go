@@ -8,22 +8,39 @@ import (
 	"strings"
 )
 
+type course struct {
+	Number, Name, Units string
+}
+
+type semester struct {
+	Term		string
+	Courses 	[]course
+}
+
 func main() {
 
 	records := getRecords("data/first_semester.txt")
-
+	xc := make([]course, 0, len(records))
+	s := semester{}
 	// #3 display output
 	for i, row := range records {
 		if i == 0 {
+			// get header info
 			xs := strings.SplitN(row[0], ",", 2)
 			t := xs[0]
-			fmt.Println("TERM:", t)
+			s.Term = t
 		} else {
+			// get data
+			c := course{}
 			xs := strings.SplitN(row[0], " ", 2)
-			fmt.Println(xs[0], xs[1], row[1])
+			c.Number = xs[0]
+			c.Name = xs[1]
+			c.Units = row[1]
+			xc = append(xc, c)
 		}
 	}
-
+	s.Courses = xc
+	fmt.Println(s)
 }
 
 func getRecords(path string) [][]string {

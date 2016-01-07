@@ -22,13 +22,13 @@ func main() {
 	semesters := academicYear("data/first_semester.txt", "data/second_semester.txt")
 
 	// #2 parse template
-	tpl, err := template.ParseFiles("public/programs/graphic-design.htm")
+	tpl, err := template.ParseFiles("tpl.gohtml")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
 	// #3 create file
-	nf, err := os.Create("public/programs/index.html")
+	nf, err := os.Create("index.html")
 	if err != nil {
 		log.Println("error creating file", err)
 	}
