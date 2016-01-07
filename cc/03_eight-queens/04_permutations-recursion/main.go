@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	options := []string{"A","B","C"}
+	options := []string{"A", "B", "C"}
 	perm := permutations(options)
 	for _, v := range perm {
 		fmt.Println(v)

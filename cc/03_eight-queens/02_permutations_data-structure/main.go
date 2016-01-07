@@ -1,21 +1,16 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	ans := [][]string{}
-	options := []string{"A","B","C"}
+	options := []string{"A", "B", "C"}
 	for _, x := range options {
 		for _, y := range options {
 			for _, z := range options {
-				ans = append(ans, strings.Fields(x + " " + y + " " + z))
+				if x != y && x != z && y != z {
+					fmt.Println(x, y, z)
+				}
 			}
 		}
-	}
-	for _, v := range ans {
-		fmt.Println(v)
 	}
 }

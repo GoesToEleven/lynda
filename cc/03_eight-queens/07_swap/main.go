@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	options := []string{"A","B","C"}
+	options := []string{"A", "B", "C"}
 	fmt.Println(options)
 	swap(options, 0, 1)
 	fmt.Println(options)
