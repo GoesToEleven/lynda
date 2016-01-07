@@ -24,3 +24,11 @@ the slice is nil. For slices, maps, and channels, make initializes the internal 
 the value for use.
 */
 // https://golang.org/doc/effective_go.html#allocation_make
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

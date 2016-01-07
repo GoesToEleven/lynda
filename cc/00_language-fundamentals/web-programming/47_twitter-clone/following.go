@@ -12,3 +12,11 @@ func following(follower, followee string, req *http.Request) (bool, error) {
 	x, err := datastore.NewQuery("Follows").Ancestor(userKey).Filter("Following =", followee).Count(ctx)
 	return x > 0, err
 }
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

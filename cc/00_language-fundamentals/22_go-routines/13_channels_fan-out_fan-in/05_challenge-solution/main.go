@@ -58,3 +58,11 @@ No.
 What is being "fanned in" here? We have launched several goroutines of the same function: workerProcess. What do those goroutines do? They are all reading from an unbuffered channel. If there was a tremendous amount of processing that each "workerProcess" func executed, then all three of the "workerProcess" funcs could be processing in parallel: pulling values off the channel and processing them. There is no "fanning in" though here. Remember what the golang blog describes fan in: "A function can read from multiple inputs and proceed until all are closed by multiplexing the input channels onto a single channel that's closed when all the inputs are closed." We don't have many channels here converging into one channel.
 
 */
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

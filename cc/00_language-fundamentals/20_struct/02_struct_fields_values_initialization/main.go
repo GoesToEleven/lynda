@@ -14,3 +14,11 @@ func main() {
 	fmt.Println(p1.first, p1.last, p1.age)
 	fmt.Println(p2.first, p2.last, p2.age)
 }
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

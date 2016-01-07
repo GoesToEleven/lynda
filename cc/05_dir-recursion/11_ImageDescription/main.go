@@ -19,7 +19,7 @@ func main() {
 		ext := filepath.Ext(path)
 		switch ext {
 		case ".jpg", ".jpeg":
-			fmt.Println(ext)
+			// fmt.Println(ext)
 
 			f, err := os.Open(path)
 			if err != nil {

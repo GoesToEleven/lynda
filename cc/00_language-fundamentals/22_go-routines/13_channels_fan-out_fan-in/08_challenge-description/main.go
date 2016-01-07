@@ -93,3 +93,11 @@ CHALLENGE #1:
 -- This code throws an error: fatal error: all goroutines are asleep - deadlock!
 -- fix this code!
 */
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

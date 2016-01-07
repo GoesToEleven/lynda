@@ -44,3 +44,11 @@ func main() {
 
 // String() string
 // https://golang.org/doc/effective_go.html#printing
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

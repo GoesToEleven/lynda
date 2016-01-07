@@ -36,7 +36,9 @@ func main() {
 func xi(f *os.File) {
 	x, err := exif.Decode(f)
 	if err != nil {
-		log.Println(err)
+		// do nothing
+		// log.SetOutput(ioutil.Discard)
+		// log.Println(err)
 	}
 	if x != nil {
 		tm, _ := x.DateTime()

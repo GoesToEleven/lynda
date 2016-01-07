@@ -24,3 +24,11 @@ func followedEmail(w http.ResponseWriter, r *http.Request, email string) {
 const confirmMessage = `
 Someone is now following you. Don't say you didn't ask for it.
 `
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

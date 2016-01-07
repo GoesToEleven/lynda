@@ -26,3 +26,11 @@ CHALLENGE #2:
 ---- Formulate your own answer, then post that answer to this discussion area: https://goo.gl/flGsyX
 ---- Read a few of the other answers at the discussion area to see the reasons of others
 */
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

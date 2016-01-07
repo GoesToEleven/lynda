@@ -39,3 +39,10 @@ The optional <- operator specifies the channel direction, send or receive.
 If no direction is given, the channel is bidirectional.
 https://golang.org/ref/spec#Channel_types
 */
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

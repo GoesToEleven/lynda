@@ -29,3 +29,11 @@ func main() {
 // go get uuid
 // https://github.com/nu7hatch/gouuid
 // NewV4
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

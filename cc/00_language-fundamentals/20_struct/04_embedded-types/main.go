@@ -37,3 +37,11 @@ func main() {
 	fmt.Println(p1.First, p1.Last, p1.Age, p1.LicenseToKill)
 	fmt.Println(p2.First, p2.Last, p2.Age, p2.LicenseToKill)
 }
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/

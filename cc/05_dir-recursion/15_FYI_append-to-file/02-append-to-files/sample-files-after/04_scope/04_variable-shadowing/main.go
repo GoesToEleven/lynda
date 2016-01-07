@@ -12,3 +12,7 @@ func main() {
 }
 
 // don't do this; bad coding practice to shadow variables
+ /* THIS WAS ADDED TO THE FILE
+		and this is the second line
+		AND THIS IS THE THIRD LINE
+		*/

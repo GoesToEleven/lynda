@@ -22,3 +22,11 @@ func main() {
 	fmt.Println(p1.Last)
 	fmt.Println(p1.Age)
 }
+
+
+
+
+/*
+All material is licensed under the Apache License Version 2.0, January 2004
+http://www.apache.org/licenses/LICENSE-2.0
+*/
