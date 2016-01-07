@@ -16,8 +16,3 @@ func main() {
 		log.Fatalln(err)
 	}
 }
-
-/*
-ParseFiles || ParseGlob
-Execute || ExecuteTemplate
-*/

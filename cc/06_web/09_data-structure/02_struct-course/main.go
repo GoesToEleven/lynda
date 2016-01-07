@@ -13,8 +13,8 @@ type course struct {
 }
 
 func main() {
-
 	records := getRecords("data/first_semester.txt")
+
 
 	// #3 display output
 	for i, row := range records {

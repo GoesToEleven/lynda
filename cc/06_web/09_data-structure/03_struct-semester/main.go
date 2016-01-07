@@ -18,19 +18,16 @@ type semester struct {
 }
 
 func main() {
-
 	records := getRecords("data/first_semester.txt")
 	xc := make([]course, 0, len(records))
 	s := semester{}
 	// #3 display output
 	for i, row := range records {
 		if i == 0 {
-			// get header info
 			xs := strings.SplitN(row[0], ",", 2)
 			t := xs[0]
 			s.Term = t
 		} else {
-			// get data
 			c := course{}
 			xs := strings.SplitN(row[0], " ", 2)
 			c.Number = xs[0]
