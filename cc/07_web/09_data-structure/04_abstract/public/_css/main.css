@@ -1,0 +1,695 @@
+/* CSS Document */
+
+/*copyright lynda.com 2012
+feel free to use these styles as you wish
+attribution would be nice, but not required
+*/
+
+/* roux academy color palette
+#FBAE2C     rgb(251, 174, 44)  ORANGE
+#B683BA      rgb(182, 131, 186)  LIGHT LAVENDER
+#A858A3    rgb(168, 88, 163)  DARK LAVENDER
+#0263AE    rgb(173, 169, 130)  DARK TAN
+#D8D5BC   rgb(2, 99, 174)  DARK BLUE
+#F9E482   rgb(249, 228, 130)  LIGHT YELLOW
+#BFBFBF rgb(191, 191, 191) LIGHT GRAY
+#414042    rgb(65, 64, 66)  DARK GRAY
+*/
+/*Font declarations*/
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Regular-webfont.eot');
+    src: url('../_fonts/Bitter-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Regular-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Regular-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Regular-webfont.svg#BitterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Italic-webfont.eot');
+    src: url('../_fonts/Bitter-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Italic-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Italic-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Italic-webfont.svg#BitterItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Bold-webfont.eot');
+    src: url('../_fonts/Bitter-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Bold-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Bold-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Bold-webfont.svg#BitterBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidSans';
+    src: url('../_fonts/DroidSans-webfont.eot');
+    src: url('../_fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/DroidSans-webfont.woff') format('woff'),
+         url('../_fonts/DroidSans-webfont.ttf') format('truetype'),
+         url('../_fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidSans';
+    src: url('../_fonts/DroidSans-Bold-webfont.eot');
+    src: url('../_fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/DroidSans-Bold-webfont.woff') format('woff'),
+         url('../_fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+         url('../_fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+/*Global styles -----------------------------------------------------------------------------------------------------------*/
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align:baseline;
+	font: inherit;
+}
+
+/*html5 display rule*/
+address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+html {
+	background: rgb(65, 64, 66);
+}
+body {
+	font: 100% DroidSans, Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	font-weight:normal;
+	font-style:normal;
+}
+article {
+	clear: both;
+	margin-bottom: 3px;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	background: url(../_images/diag_pattern.png);
+}
+p {
+	margin-bottom: 1em;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+/* Global classes */
+
+/*micro-clearfix by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/*/
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+.cr {
+	clear: right;
+}
+.cl {
+	clear: left;
+}
+.cb {
+	clear: both;
+}
+.nrm {
+	margin-right: 0;
+}
+.orange {
+	text-transform: uppercase;
+	color: rgb(251, 174, 44);
+	font-weight: bold;
+}
+.blue {
+	text-transform: uppercase;
+	color: rgb(2, 99, 174);
+	font-weight: bold;
+}
+.lavender {
+	text-transform: uppercase;
+	color: rgb(168, 88, 163);
+	font-weight: bold;
+}
+.more {
+	display: block;
+}
+/*layout styles*/ 
+body {
+	width: 960px;
+	position: relative;
+	margin: 0 auto;
+}
+article#mainContent {
+	float: left;
+	background: white;
+	width: 607px;
+	margin-top: 3px;
+	padding: 16px;
+}
+article#spotlight {
+	margin-bottom: 0;
+}
+aside {
+	float: right;
+	width: 318px;
+}
+footer {
+	clear: both;
+}
+
+/*Header styles*/
+.pageHeader h1{
+	width: 160px;
+	height: 150px;
+	text-indent: -9000em;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: black url(../_images/ralogo.png) no-repeat;
+	z-index: 5;
+	margin: 0;
+}
+.pageHeader h1 a {
+	display: block;
+	width: 160px;
+	height: 150px;
+	margin: 0;
+}
+
+/*Nav styles*/
+.pageHeader nav {
+	background: rgba(35, 31, 32, .8);
+	height: 45px;
+	width: 800px;
+	position: absolute;
+	top: 0px;
+	left: 160px;
+}
+.pageHeader ul {
+	list-style: none;
+	margin-left: 32px;
+}
+.pageHeader li {
+	float: left;
+	margin-right: 64px;
+}
+.pageHeader a {
+	color: white;
+	text-decoration: none;
+	line-height: 45px;
+	font-size: .9em;
+	text-transform: lowercase;
+}
+.pageHeader a:hover {
+	color: rgb(251, 174, 44);
+	background: none;
+}
+/*page-specific header styles*/
+.homeHeader {
+	height: 388px;
+	background: url(../_images/main_back.jpg) no-repeat;
+}
+.programHeader {
+	height: 192px;
+	background: url(../_images/design.jpg) no-repeat;
+}
+.aboutHeader {
+	height: 192px;
+	background: url(../_images/accent2.jpg) no-repeat;
+}
+.graphicHeader {
+	height: 192px;
+	background: url(../_images/accent3.jpg);
+}
+.requestHeader {
+	height: 192px;
+	background: url(../_images/accent1.jpg) no-repeat;
+}
+.errorHeader {
+	height: 192px;
+	background: url(../_images/accent4.jpg) no-repeat;
+}
+p.branding {
+	background: rgba(35, 31, 32, .8);
+	text-align: right;
+	margin-top: 77px;
+	width: 200px;
+	padding: 1.2em 1em;
+	color: white;
+	float: right;
+	font-family: Bitter, Georgia, Times, "Times New Roman", serif;
+	font-size: 1.27em;
+	line-height: 1.6;
+}
+p.branding a {
+	color: rgb(249, 228, 130);
+	line-height: normal;
+	text-transform: capitalize;
+}
+/*info section styles*/
+section.info {
+	width: 318px;
+	margin: 3px 3px 0 0;
+	float: left;
+	background: white;
+}
+section.info h2 {
+	color: white;
+	background: url(../_images/diag_pattern.png);
+	line-height: 45px;
+	padding-left: .6em;
+	font-family: Bitter, Georgia, Times, "Times New Roman", serif;
+	font-size: 1.6em;
+	font-weight: 100;
+}
+section.info img {
+	display: block;
+	margin: 0 auto 2em;
+}
+section.info p, section.info ul {
+	margin: 0 1.2em 1em;
+	list-style: none;
+}
+section.info li {
+	margin-bottom: .8em;
+	font-size: .9em;
+}
+section.info li a {
+	display: block;
+}
+section.info .date {
+	font-weight: bold;
+	color: white;
+	display: block;
+}
+section.info ul {
+	margin-top: 16px;
+}
+/*collapsible  containers*/
+section.condense {
+	max-height: 308px;
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: max-height 0.75s ease 0s;
+	-moz-transition: max-height 0.75s ease 0s;
+	-ms-transition: max-height 0.75s ease 0s;
+	-o-transition: max-height 0.75s ease 0s;
+	transition: max-height 0.75s ease 0s;
+}
+section.condense:hover {
+	max-height: 999px;
+}
+section.condense:after {
+	content: " ";
+	background: url(../_images/hover.png) no-repeat right top;
+	width: 30px;
+	height: 45px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+section.condense:hover:after {
+	background-position: right bottom;
+}
+/*specific container styles*/
+section.spotlight {
+	background: rgb(168, 88, 163);
+}
+section.show {
+	background: rgb(251, 174, 44);
+}
+section.events {
+	background: rgb(2, 99, 174);
+	margin-right: 0;
+}
+section.alumni, section.academic {
+	background: rgb(251, 174, 44);
+	margin-right: 0;
+}
+section.connect {
+	background: rgb(168, 88, 163);
+	margin-right: 0;
+}
+.connect ul {
+	list-style: none;
+	margin: 0;
+}
+section.connect li {
+	float: left;
+	margin: 16px 0;
+	margin-right: 32px;
+}
+.connect li a{
+	display: block;
+	width: 45px;
+	height: 45px;
+	text-indent: -999em;
+}
+.connect li:last-child  {
+	margin-right: 0;
+}
+a.twitter {
+	background: url(../_images/icon_twitter.png) no-repeat;
+}
+a.google {
+	background: url(../_images/icon_google.png) no-repeat;
+}
+a.facebook {
+	background: url(../_images/icon_facebook.png) no-repeat;
+}
+a.linked {
+	background: url(../_images/icon_linked.png) no-repeat;
+}
+section.find {
+	background: rgb(2, 99, 174);
+	margin-right: 0;
+}
+section.find a:hover {
+	color: rgb(251, 174, 44);
+}
+/*main article styles*/
+article h1 {
+	font-family: Bitter, Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 2.8em;
+	color: rgb(168, 88, 163);
+	margin-bottom: .5em;
+}
+article h2 {
+	font-family: Bitter, Georgia, Times, "Times New Roman", serif;
+	font-size: 1.5em;
+	color: rgb(65, 64, 66);
+	margin-bottom: .5em;
+	clear: both;
+}
+article h3 {
+	font-family: Bitter, Georgia, Times, "Times New Roman", serif;
+	font-size: 1.2em;
+	color: rgb(251, 174, 44);
+	font-weight: bold;
+	margin-bottom: 0;
+}
+article a {
+	color: rgb(2, 99, 174);
+}
+article a:hover {
+	color: rgb(251, 174, 44);
+}
+article .more {
+	color: rgb(2, 99, 174);
+	text-align: right;
+	font-weight: bold;
+}
+article a.more:hover {
+	color: rgb(251, 174, 44);
+	background: none;
+}
+#mapCanvas {
+	border: 2px solid rgb(65,61,62);
+	margin-bottom: 2em;
+}
+.address {
+	float: right;
+}
+blockquote {
+	background: rgb(249, 228, 130);
+	padding: 1em;
+	padding-bottom: 0;
+	margin-left: 2em;
+	font-family: Bitter, Georgia, "Times New Roman", Times, serif;
+	font-size: 1em;
+	color: rgb(65, 61, 62);
+	margin-bottom: 1em;
+}
+blockquote .quote {
+	font-family: DroidSans, Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	font-weight: bold;
+	text-align: right;
+	display: block;
+	margin-top:.5em;
+	padding: .2em 0 1em;
+	background: url(../_images/diag_pattern.png);
+}
+ul.links {
+	list-style: none;
+	margin: 0;
+	padding 0;
+}
+ul.links li {
+	margin-bottom: 1em;
+}
+/*table styles*/
+article table {
+	width: 100%;
+	margin-bottom: 1em;
+	border: 3px solid white;
+	border-collapse: collapse;
+}
+article caption {
+	opacity: 0;
+	margin:0;
+	height: 0;
+}
+article tr {
+	background: rgb(251, 174, 44);
+	border-bottom: 1px solid white;
+}
+article tr:nth-child(even) {
+	background: rgb(249,228,130);
+}
+article th {
+	background: rgb(65, 62, 61);
+	color: white;
+	padding: .6em 1em .3em;
+	text-align: left;
+	border-bottom: 3px solid white;
+}
+article th:first-child {
+	width: 75%;
+}
+article th, article td {
+	vertical-align: middle;
+	border-left: 3px solid white;
+}
+article td {
+	padding: .4em 1em;
+}
+article td:nth-child(even) {
+	font-weight: bold;
+	text-align: center;
+}
+/*spotlight gallery styles */
+img.student {
+	display: block;
+	float: right;
+}
+div.student {
+	background: white;
+	width: 670px;
+	height: 125px;
+	padding: 65px 32px 0 0;
+	text-align: right;
+	margin-bottom: 3px;
+}
+div.student h1 {
+	margin-bottom: .2em;
+}
+div.student p {
+	color: rgb(191, 191, 191);
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+div.artwork {
+	float: left;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	background: rgb(120, 120, 120);
+	padding: 12px 12px 0 12px;
+}
+div.nrm {
+	margin-right: 0;
+}
+div.artwork img {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+div.artwork p {
+	line-height: 32px;
+	background: url(../_images/diag_pattern.png);
+	color: white;
+	font-size: .8em;
+	text-align: right;
+	padding: 0;
+	margin:0;
+}
+p.statement {
+	background: rgb(251, 174, 44);
+	color: white;
+	width: 475px;
+	height: 175px;
+	margin: 0;
+	float: left;
+	padding: 16px;
+	font-size: .9em;
+	line-height: 1.7;
+}
+p.quote {
+	font-family: Bitter, Georgia, "Times New Roman", Times, serif;
+	font-size: 1.58em;
+	line-height: 1.6;
+	padding: 16px;
+	background: white;
+	float: left;
+	width: 285px;
+	height: 368px;
+	text-align: center;
+	margin-bottom: 0;
+	color: rgb(120, 120, 120);
+}
+/*form styles*/
+fieldset {
+	border: none;
+	border-bottom: 1px solid rgb(2, 99, 174);
+	margin-bottom: 1em;
+	width: 486px;
+}
+fieldset:last-child {
+	border: none;
+}
+legend {
+	font-family: Bitter, Georgia, "Times New Roman", Times, serif;
+	font-size: 1.4em;
+	color: rgb(251, 174, 44);
+}
+form {
+	margin-bottom: 1em;
+}
+form ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+form li {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+	font-size: .9em;
+}
+.study li {
+	margin-bottom: 2em;
+}
+li.group {
+	margin-bottom: 0;
+	font-weight: bold;
+	font-size: .8em;
+}
+label.text {
+	display: block;
+}
+input[type="text"], input[type="email"], input[type="search"],textarea, select {
+	border: none;
+	background: rgb(249, 228, 130);
+	width: 318px;
+	padding: .5em;
+	font-size: 1em;
+}
+textarea {
+	height: 128px;
+}
+input:focus, textarea:focus {
+	border: 2px solid rgb(168, 88, 163);
+}
+input[type="submit"] {
+	background: rgb(2, 99, 174);
+	color: white;
+	padding: .2em .4em;
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
+}
+select {
+	width: 328px;
+}
+select[multiple]{
+	height: 162px;
+}
+/*footer styles	*/
+footer#pageFooter {
+	background: rgb(249, 228, 130);
+	color: rgb(65, 64, 66);
+	padding: 32px 0 16px;
+}
+footer h3 {
+	font-family: Bitter, Georgia, Times, "Times New Roman", serif;
+	text-transform: uppercase;
+	font-size: 1em;
+	text-align: center;
+	margin-bottom: 1em;
+}
+footer p {
+	font-size: .7em;
+	text-align: center;
+	clear: both;
+}
+footer p a{
+	color: rgb(65, 64, 66);
+	text-decoration: underline;
+}
+footer ul a{
+	color: rgb(65, 64, 66);
+}
+footer a:hover {
+	color: white;
+}
+footer .col {
+	float: left;
+	width: 286px;
+	border-right: 2px solid rgba(191, 191, 191, .8);
+	margin-bottom: 1em;
+	padding-left: 32px;
+}
+footer .col:last-child {
+	border: none;
+}
+footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: .6em;
+}
+footer li {
+	margin-bottom: 1em;
+}
+footer .col1 {
+	float: left;
+	width: 130px;
+}
+footer .col2 {
+	float: right;
+	width: 130px;
+}
