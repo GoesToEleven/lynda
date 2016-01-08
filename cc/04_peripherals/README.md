@@ -1,4 +1,4 @@
-My learning process
+Our learning process
 
 https://godoc.org/?q=mouse
 
@@ -32,6 +32,7 @@ http://brew.sh/
 
 https://github.com/veandco/go-sdl2
 
-https://www.google.com/search?q=pkg-config%3A+exec%3A+%22pkg-config%22%3A+executable+file+not+found+in+%24PATH&oq=pkg-config%3A+exec%3A+%22pkg-config%22%3A+executable+file+not+found+in+%24PATH&aqs=chrome..69i57j69i58.813j0j4&sourceid=chrome&es_sm=119&ie=UTF-8
-
 https://www.google.com/search?q=sdl+pkg-config&oq=sdl+pkg-config&aqs=chrome..69i57.3654j0j1&sourceid=chrome&es_sm=119&ie=UTF-8#q=mac+sdl+pkg-config
+
+http://brewformulas.org/Pkg-config
+

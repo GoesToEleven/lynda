@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-// aka, pitch, oscillations per second
+// tonehz, aka, pitch, oscillations per second
 // more oscillations / second = higher pitch/tone
 // less oscillations / second = lower pitch/tone
 var toneHz float64 = 440
@@ -25,7 +25,6 @@ const sampleHz = 48000
 func dPhase() float64 {
 	// toneHz / sampleHz
 	// 440 / 48000 is oscillations per second / entries per second is oscillations / entry
-	// is oscillations per entry
 	// 2 * pi is one oscillation
 	// this is in radians which is a unitless type (not in programming sense, but math sense)
 	// there's no concept attached to the number like with time
@@ -42,7 +41,7 @@ const (
 
 var phase float64
 
-//export SineWave
+// export SineWave
 // this all communicates with C code
 // the parameters in the signature are all C types
 // the first argument is user data - but we're not using it
@@ -167,7 +166,7 @@ func main() {
 				}
 			}
 		}
-//		sdl.Delay(100)
+		// sdl.Delay(100)
 		// use Go for sleep
 		// because in SDL the delay pauses the entire thread
 		// Go only pauses the goroutine, not the thread
