@@ -19,3 +19,12 @@
 		* go get golang.org/x/mobile/cmd/gomobile
 		* gomobile init 
 			* this might take a few minutes 
+			
+////
+
+https://github.com/golang/mobile/tree/master/example
+https://github.com/golang/go/wiki/Mobile
+https://godoc.org/golang.org/x/mobile
+https://godoc.org/golang.org/x/mobile/example
+https://github.com/golang?page=1
+https://github.com/golang/mobile/tree/master/example
