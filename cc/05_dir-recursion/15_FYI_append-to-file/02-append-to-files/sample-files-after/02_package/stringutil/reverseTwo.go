@@ -10,7 +10,7 @@ func reverseTwo(s string) string {
 
 // this demonstrates how an unexported function
 // can be used by an exported function in the same package
- /* THIS WAS ADDED TO THE FILE
-		and this is the second line
-		AND THIS IS THE THIRD LINE
-		*/
+/* THIS WAS ADDED TO THE FILE
+and this is the second line
+AND THIS IS THE THIRD LINE
+*/

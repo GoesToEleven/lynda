@@ -9,9 +9,6 @@ func main() {
 	}
 }
 
-
-
-
 func gen(nums ...int) chan int {
 	out := make(chan int)
 	go func() {
@@ -33,9 +30,6 @@ func sq(in chan int) chan int {
 	}()
 	return out
 }
-
-
-
 
 /*
 All material is licensed under the Apache License Version 2.0, January 2004

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"log"
 	"io"
+	"log"
+	"os"
 	"strings"
 )
 
@@ -19,8 +19,8 @@ func main() {
 </head>
 <body>
 <h1>` +
-	name +
-	`</h1>
+		name +
+		`</h1>
 </body>
 </html>
 	`)

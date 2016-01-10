@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-var a = "this is stored in the variable a" // package scope
-var b, c string = "stored in b", "stored in c"    // package scope
-var d string                                      // package scope
+var a = "this is stored in the variable a"     // package scope
+var b, c string = "stored in b", "stored in c" // package scope
+var d string                                   // package scope
 
 func main() {
 
 	d = "stored in d" // declaration above; assignment here; package scope
-	var e = 42    // function scope - subsequent variables have same package scope:
+	var e = 42        // function scope - subsequent variables have same package scope:
 	f := 43
 	g := "stored in g"
 	h, i := "stored in h", "stored in i"
@@ -33,9 +33,6 @@ func main() {
 	fmt.Println("n - ", n)
 	fmt.Println("o - ", o)
 }
-
-
-
 
 /*
 All material is licensed under the Apache License Version 2.0, January 2004

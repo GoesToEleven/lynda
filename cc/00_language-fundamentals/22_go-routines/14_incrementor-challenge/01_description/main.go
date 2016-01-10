@@ -30,9 +30,6 @@ CHALLENGE #1
 -- Take the code from above and change it to use channels instead of wait groups and atomicity
 */
 
-
-
-
 /*
 All material is licensed under the Apache License Version 2.0, January 2004
 http://www.apache.org/licenses/LICENSE-2.0

@@ -108,9 +108,9 @@ func main() {
 	defer window.Destroy()
 
 	spec := &sdl.AudioSpec{
-		Freq:     sampleHz,
+		Freq: sampleHz,
 		// size of data unsigned 8 bit integers
-		Format:   sdl.AUDIO_U8,
+		Format: sdl.AUDIO_U8,
 		// mono channel
 		Channels: 1,
 		// buffer, entries in the future it can store before it calls for more data
@@ -158,11 +158,11 @@ func main() {
 				if t.Button == sdl.BUTTON_LEFT {
 					sdl.PauseAudio(t.State == sdl.RELEASED)
 					// instead of above line, could do this - it was like this before:
-//					if t.State == sdl.PRESSED {
-//						sdl.PauseAudio(false)
-//					} else {
-//						sdl.PauseAudio(true)
-//					}
+					//					if t.State == sdl.PRESSED {
+					//						sdl.PauseAudio(false)
+					//					} else {
+					//						sdl.PauseAudio(true)
+					//					}
 				}
 			}
 		}
@@ -170,6 +170,6 @@ func main() {
 		// use Go for sleep
 		// because in SDL the delay pauses the entire thread
 		// Go only pauses the goroutine, not the thread
-		time.Sleep(100*time.Millisecond)
+		time.Sleep(100 * time.Millisecond)
 	}
 }

@@ -13,10 +13,9 @@ type course struct {
 }
 
 type semester struct {
-	Term		string
-	Courses 	[]course
+	Term    string
+	Courses []course
 }
-
 
 func main() {
 	semesters := academicYear("data/first_semester.txt", "data/second_semester.txt")

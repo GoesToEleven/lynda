@@ -24,9 +24,6 @@ func main() {
 // Why are all goroutines asleep?
 // How can we fix this?
 
-
-
-
 /*
 All material is licensed under the Apache License Version 2.0, January 2004
 http://www.apache.org/licenses/LICENSE-2.0
