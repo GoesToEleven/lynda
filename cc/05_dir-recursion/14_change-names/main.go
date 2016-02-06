@@ -12,6 +12,10 @@ import (
 	"strings"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/rwcarlsen/goexif/exif
+
 func main() {
 
 	xs := getImages()

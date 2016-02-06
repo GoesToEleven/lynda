@@ -12,6 +12,11 @@ import (
 	"time"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/veandco/go-sdl2/sdl
+
+
 // tonehz, aka, pitch, oscillations per second
 // more oscillations / second = higher pitch/tone
 // less oscillations / second = lower pitch/tone

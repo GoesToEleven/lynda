@@ -8,6 +8,10 @@ import (
 	"os"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/veandco/go-sdl2/sdl
+
 var winTitle string = "Go-SDL2 Events"
 var winWidth, winHeight int = 800, 600
 

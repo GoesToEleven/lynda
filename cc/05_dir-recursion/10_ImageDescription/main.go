@@ -9,6 +9,10 @@ import (
 	"strings"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/rwcarlsen/goexif/exif
+
 func main() {
 
 	filepath.Walk("../../", func(path string, info os.FileInfo, err error) error {

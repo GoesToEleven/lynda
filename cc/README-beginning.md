@@ -61,8 +61,6 @@
 			* resources for learning
 				* https://golang.org/doc/
 1. Why Go?
-	* presentation
-		* https://goo.gl/6MjcT6
 	* purpose of the language
 		* https://golang.org/doc/faq#What_is_the_purpose_of_the_project
 	* why create a new language

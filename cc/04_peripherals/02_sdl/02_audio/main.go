@@ -13,6 +13,10 @@ import (
 	"github.com/veandco/go-sdl2/sdl"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/veandco/go-sdl2/sdl
+
 const (
 	toneHz   = 440
 	sampleHz = 48000

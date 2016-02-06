@@ -6,6 +6,10 @@ import (
 	"os"
 )
 
+// IMPORTANT:
+// run this at terminal to import exif package:
+// go get github.com/rwcarlsen/goexif/exif
+
 func main() {
 	fname := "03.jpg"
 

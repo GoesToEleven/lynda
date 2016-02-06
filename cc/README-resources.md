@@ -55,13 +55,12 @@
 		* https://godoc.org/
 		* https://github.com/avelino/awesome-go
 	* Credit and Thank you
-		* Mitakuye Oyasin
-			* Bill Kennedy
-			* Caleb Doxsey
-			* Daniel Hoffmann
-			* Corey Dihel
-			* Ray Villalobos
-            * Zeno Rocha
+		* Bill Kennedy
+		* Caleb Doxsey
+		* Daniel Hoffmann
+		* Corey Dihel
+		* Ray Villalobos
+		* Zeno Rocha
 	* Stay Connected
 		* https://www.youtube.com/user/toddmcleod
 		* https://twitter.com/Todd_McLeod

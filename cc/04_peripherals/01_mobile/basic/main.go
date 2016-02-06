@@ -43,6 +43,13 @@ import (
 	"golang.org/x/mobile/gl"
 )
 
+// IMPORTANT:
+// run this at terminal to import missing packages:
+// go get <insert package name here>
+// for example:
+// go get golang.org/x/mobile/gl
+
+
 var (
 	images   *glutil.Images
 	fps      *debug.FPS
