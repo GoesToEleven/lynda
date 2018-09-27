@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	res, err := http.Get("http://lpo.dt.navy.mil/data/DM/Environmental_Data_Deep_Moor_2015.txt")
+	res, err := http.Get("https://raw.githubusercontent.com/lyndadotcom/LPO_weatherdata/master/Environmental_Data_Deep_Moor_2015.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
